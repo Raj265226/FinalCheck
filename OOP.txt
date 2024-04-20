@@ -1,0 +1,67 @@
+OOP Approach - Python is a multi-paradigm programming language. One of the most popular problem solving approach is
+by creating objects. This is known as OOP. An object has 2 characteristics - attributes and methods/behaviour.
+Ex - Dog has it's name,age,height are attributes. Barking, running are behaviour.
+The concept of OOP focus on creating reusable code is called DRY (Don't Repeat Yourself)
+
+Class - It's a collection of objects. It should contain attributes and methods.
+Object - It's a collection of data(attributes) and methods(functions). Everything in python is an object. When we
+define a class, we need to create an object to allocate the memory
+Method - It's a function associated with object.
+Class Object Instance - Suppose class is a prototype of building.Building can have details about the floor,rooms,doors.
+we can create many buildings. Here building can be seen as a class, we can create many objects of this class. Object is
+an instance of a class. The process of creating an object is called instantiation.
+class Employee:
+    id = 10   # Attributes of Employee class
+    def display(self):  # Pass self parameter in display function
+        print(self.id)
+emp = Employee()  # Creating emp instance of Employee class
+emp.display()
+Constructor - It's a special method __init__() the constructor of the class and initializing the objects of the class.
+It's called automatically when instance is created. Self keyword is the first argument and then we create many.
+class Employee:
+    def __init__(self, id):
+        self.id = id
+    def display(self):
+        print(self.id)
+emp1 = Employee(2)
+emp1.display()
+emp2 = Employee(3)
+emp2.display()
+Non parameterized constructor uses when we don't want to manipulate the value.
+
+Inheritance - If we create one class and it uses all properties and behaviour of other class. then new class is known
+as child class or derived class and the one whose properties are acquired is called parent class or base class.
+Multiple Inheritance - A class is derived from more than one base class
+Hierarchical Inheritance - More than one classes are created from a single class.
+
+Polymorphism - By polymorphism, we understand that one task can be performed in different ways. Ex - One person in
+office is an employee, but a customer in shopping mall.
+
+Encapsulation - It's used to restrict the access to methods and variables. In Encapsulation, code and data are wrapped
+together within a single unit from being modified by accident.Hiding the private details of class from other objects.
+Use _ prefix before methods or attributes for privacy and also __ prefix for stronger privacy
+
+OverWriting - If we overWrite a function, the original function will be gone. The function will be redefined.
+
+OverRiding - It's a method where two methods with same name have different tasks.The child class has access the
+properties and functions of parent class. Also child class extends additional functions to it's own method.
+Invoking parent or child class method depends on object being used to invoke.
+
+Operation Overloading - In python same operator behaves differently with different types. + operator works as an
+addition in arithmatic, but works as concatenate in strings. This feature allows same operator to have different
+meaning according to the context is called operator overloading.
+
+Object-oriented vs Procedure-oriented -
+1.It makes development and maintenance easier            It's not
+2.It provides data hiding. so, it's secure.              It doesn't have any security
+3.It simulates real world entity                         It's not
+4.Ex-Java,Python,.Net,C#                                 C,pascal,vb
+
+Run-time and Compile-time polymorphism - It's a method Overriding. Python doesn't support Compile time polymorphism.
+Data mangling - In python we can make class attribute or methods private by using __
+Dunder/Magic Dunder - Having __ before and after the method.
+
+Recursion - It's a process in which function calls itself directly or indirectly to solve a problem.
+Advantage of recursion - It makes some algorithms easier, In some cases it reduces lines of code.
+Disadvantages of recursion - It takes a lot of memory, It's hard to debug, If it's not defined properly then it leads
+to runtime error

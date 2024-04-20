@@ -1,0 +1,314 @@
+Cookie - It's a data stored as name-values pair on the user's computer by the web browser while browsing a website.
+Session - It's a server-side storage of information that is associated with user or browser session. Each session is
+assigned with a unique id.
+Cache - It's storing copies of files or data temporarily that makes a device,browser or app run faster to access to
+the data
+Session Cookie - This cookie are active until the browser is open.
+Persistent Cookie - This cookie are written permanently on the user machine. It can be lasted for months or years.
+
+WebDriver - It's an automation framework like selenium that allows you to programmatically control web browsers.
+ It's not a class or method but an interface. Webdriver interface depends on the browser you want to automate. Like
+ for googlechrome the implementation class is Chromedriver.
+
+ Abstract class and method - an abstract class is a class that cannot be instantiated on its own , It allows you
+ to create a set of methods that must be created within the child classes built from the abstract class.
+ An abstract method is a method that is declared in the abstract class but must be implemented by the child class.
+ Abstract classes and methods are a way to create a blueprint for other classes, ensuring that certain methods are
+ implemented in child classes.
+
+ Data driven test vs Keyword driven test
+ a.DDT can conduct testing using any variables,values,stored data.
+   KDT can only use specific keyword
+ b.DDT can store data in any formats like csv,excel,db.
+   KDT  can only store data in Excel
+ c.DDT consumes less time , KDT consumes much more time that DDT.
+ d.High level programming knowledge required for DDT
+   Without knowledge of programming test KDT can be performed
+
+ Assert vs Verify
+ In assert, As soon as the verification fails the execution of that test method is stopped. Following the test method
+ is marked as fail.
+ In verify, The test execution continues even after failure of an assertion statement
+
+ Fluent Wait - In Selenium, a "Fluent Wait" is a way to wait for a certain condition to occur before proceeding with
+  the execution of the test script. Unlike implicit and explicit waits which wait for a fixed amount of time,
+  Fluent Wait provides more flexibility by allowing you to specify the polling frequency and to ignore certain
+  exceptions during the wait period.
+
+  Data Driven Framework , Keyword Driven Framework , Hybrid Framework
+  DDF - In selenium, It's a method of separating data sets from the test cases. Once it's done then it can be
+  easily modified for a specific functionality without changing the code.
+  KDF - It's a method, used for speeding up the automation testing by separating keywords for a common sets of
+  functions and instructions. All the operations and instructions to be performed are written in some external file.
+  HF - It's a concept where we are using advantage of both KDF as well as DDF.
+
+  Static wait - It will halt the test execution for some specific time no matter elements get visible before that time.
+  In python, we can use 'time.sleep(5)'.
+  Dynamic Wait - It will wait until the condition is met. So, user prefers it to use mostly. suppose you have given
+  timeout value 20, if element is loaded in 5 seconds , rest 15 seconds can be ignored. Ex - Implicit,Explicit wait
+  Implicit - It directs webdriver to wait for certain time before it throws an exception.
+  Explicit - It directs webdriver to wait for certain conditions. But, it can be applied for specified elements.
+
+  Components of selenium - Selenium Webdriver, Selenium Grid, Selenium IDE
+  Locators in selenium - id,name,className,tagName,linkText,partialLinkText,CSS Selector,Xpath
+  Xpath - It's technique in selenium to navigate through HTML structure of any page and also XML structure of any doc.
+  Automation framework - It's not a single tool or process, but the collection of tools and process working together
+  to support automated testing of any app.
+
+  Hard assert - It throws exception immediately after assert statement fails. Test execution stops at this point.
+  Soft assert - It doesn't throws exception immediately after assert statement fails. All test will be executed first
+  then the fail testcases will be marked.  Need to write '--soft-asserts' after the command.
+
+  / and // differences -
+  Single slash is used with absolute path, which will start from root path
+  Double slash is used with relative path, which will start from current path
+
+find element - It's to find webelement on a webpage
+find elements - It's to find a list of webelements  matching locator passed on params. If same locator found
+multi-times then first one will be displayed.
+
+Linklist over array -
+Elements can be added indefinitely, while an array will get filled or need to be resized
+Elements can be removed from linklist, where removing element will make empty spaces in the list.
+
+Python OOP - Python is not a pure OOP language as it doesn't allow strong encapsulation. Also in python you can write
+program without defining classes, which is not possible in pure  OOP language.
+
+How to Create Thread in python?
+By creating Threading module
+import threading
+def print_n()
+    for i in rang(5):
+       print(i)
+thread = threading.Thread(target=print_n)
+thread.start()
+thread.join()
+
+Virtual function - All methods in classes are "virtual". Any method defined in superclass can be overridden in a
+subclass
+OOP vs OO - Object oriented language don't have any inbuilt objects.
+String class and overload the overwriting - Python has built in string class named "str"
+Overloading is achieved by overriding the method which is for operator. Ex- __add__(self,x) is reserved for
+overloading  + operator.
+
+Sub-class and Sub-type -
+class Animal:
+    def sound(self):
+        print("Animal makes sound")
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks")
+def make_sound(animal):
+    animal.sound()
+a = Dog()
+make_sound(a)
+Here, Dog is a sub-type of Animal, so instance of Dog passed a function that expects an Animal
+
+Object and It's lifetime - An object is created when memory is allocated for it. Typically it occurs when an instance
+of a class is instantiated.
+Lifetime of an object refers to the duration of object exist in memory allocation and its deallocated.
+
+Protect global data in threads - To protect global data we need to ensure data integrity. You can protect global data
+in threads using lock. Ex - using thread module import thread and use lock=threading.lock()
+
+Private and Public function -
+class Myclass:
+    def public(self):
+        print("this is public")
+    def __private(self):
+        print("this is private")
+a = Myclass()
+a.public()
+a._Myclass__private()
+Public method is designed to be used freely both inside and outside the class
+Private method is designed with prefix the member name with 2 underscores. It can be only used inside the class. It
+provides encapsulation to prevent its use outside the class.If we use Myclass it will throw error as their name is
+mangled.So, we need to use mangled name like _Myclass (Data mangling)
+
+Single Inheritance - A child class is derived from a single parent class and allows the class to derive behaviour and
+properties of a single parent class.
+
+abstraction - An abstraction is used to hide the irrelevant data or class in order to reduce the complexity.
+abstraction in Stack - It's a linear Data Structure that follows particular order in which operations are performed.
+The order in LIFO.It means last element added in stack will be removed first.
+
+keys.Enter , keys.Return - In selenium, both represents ENTER keys in keyboard. so,they are functionally identical.
+Destructor - In python destructor method is known as __del__() method. It's called when object's reference count drops
+to zero and It's garbage-collected due to python's garbage collection mechanism.
+
+Scope resolution - Scope resolution is required when variable is used to determine from where the value should come.
+It follows LEGB(Local Enclose Global Built-in) rule.
+x = 'Global'
+def outer():
+    x = 'Enclosing'
+    def inner():
+        x = 'Local'
+        print(x)  # Resolves to local x
+    inner()
+    print(x)  # Resolves to enclosing x
+outer()
+print(x)  # Resolves to global x
+
+Object Slicing - It's a technique to extract a portion from a sequence by specifying start,stop index & step index(opt)
+my_list = ["a", "b", "c", "d", "e", "f", "g", "h"]
+x = slice(1,7,2)
+print(my_list[x])  -- ["b", "d", "f"]
+
+Attributes of automation - Efficiency,Accuracy,Consistency,Scalability,Flexibility,Usability
+Exceptions in selenium - NoSuchElementException,TimeoutException,NoSuchWindowException,WebDriverException
+FIndBy and findElement - FindBy is an annotation where findElement is a method.
+Mutable - In python we can change the value of dictionaries,list after creation. thats why its mutable
+SOA - it stands for service-oriented-architecture. It's a stage in the evolution of application development.
+It defines a way to make software components reusable using the interfaces.
+Size of empty class - It's not exactly 1 byte but larger than 1 byte due its internal fields for metadata.
+
+Friend class - It's a function that given the same access as methods to the private and protected data.
+there is no privacy in python. so, no need for friend function
+
+Variable - It's a named location used to store data in the memory. Each variable has unique identifier.
+constant - Type of variable whose value can't be changed
+keywords - During coding keyword can't be used as variable,function name.It's used to define syntax of python language
+iterators - It's an object to that can be iterated upon like lists,tuples,dictionaries. It implements 2 methods
+__iter__() and __next__()
+Functional arguments - Argument passing to the function is an optional. Ex- Default,keyword,arbitary arguments
+def hello(name,msg="howz u?"):  # msg has default arguments
+    print("Hello",name,msg)     # name,msg is parameters
+hello("Raj","Nice Day")
+hello("raj1")                   # arguments is not assigned so default value will be printed
+
+Advantages of tuple over list -
+1.Tuples are immutable, so,values can't be changed after creation.
+2.Accessing elements in tuples easier than list as it stored data as a single block of memory
+3.Tuples takes less memory than list.
+
+break and continue - Break statement is used inside the loop. It immediately terminate the loop if condition is met,
+Continue statement is used to skip the rest of the code inside the loop.It jumps into the next iterations.
+Exception - Python has built-in exception which enables our program to output an error message. when it occurs then
+it stops the process until it's handled.
+
+-------------------------------------------------------QA---------------------------------------------------------------
+
+SDLC - It's a procedure to development a software.
+Waterfall Model - Requirements > Design > Built > Testing > Maintenance
+V-Model - Customer req spec> High level design > Low level design > Coding > UAT > System testing >
+Integration testing > Functional testing > Unit testing
+Waterfall Model > V Model - We can't back and change requirements once it's reached into design stage. Change in
+requirements leads to bug in design and then it goes on to the code. So,final product may face lot of rework to do.
+Also in V-Model we need to have QA from beginning and More document required for testcases,test plan
+Software Test - Identifying defects in software.
+White Box - It's done by developers mostly. It's to check every line of code
+Black Box - It's done by QA. it's to check functionality with the requirements.
+Grey Box - It's a technique to test a software product with partial knowledge of internal structure of the code.
+White Box vs Black Box -
+a.Done By dev , Done by QA
+b.Should have knowledge on internal structure of the code , No knowledge required
+c.Should have knowledge of programming , No knowledge of programming required
+Functional and Non-Functional Test - One ensures the function works properly & other ensures how well application works
+Unit Test - It's a level of software testing where individual units of the software are tested
+Integration Test - It's a level of software testing where individual units are combined and tested as a group
+System Test - It's a level of software testing where complete and integrated software is tested
+Acceptance Test - It's done by end user to check software can handle all real-time business scenarios.
+Regression Test - It's to check any changes like bug fix or changes in the application not affecting the unchanged part
+Retest - It's to check original defect has been removed successfully.
+Sanity Test - It's a subset of regression test. It's done when we don't have much time to test. It's to check new
+functionalities is not affecting any previous functionalities.
+Smoke Test - It's a subset of acceptance test. It's done to check critical functionalities only, but nothing in depth
+DRY run test - It's a static test performed by dev before software delivered to the user to reduce failure.
+Ad-hoc Test - Testing application randomly
+Alpha & Beta Test - Alpha is done by QA inside organisation where Beta is done by real users who actually uses this s/w
+Usability Test - It's to check how user feels comfortable to use the software
+UAT - It's the last step before the product goes to live to the end user. It's performed by client to make sure product
+works perfectly and meets all the requirement.
+Performance Test - It's to test speed,response time,stability,reliability and resource usage of a software application
+under particular workload
+Bottlenecks of performance test - App supports 100 users load but 3rd party api supports 20 only. then 3rd party api is
+performance bottlenexks
+Positive Test - +ve test determines that application works as expected.If error encountered in +ve test then it fails.
+Negative Test - In -ve test we need to check application handles invalid input and unexpected user behavior
+Usage of testcases - It's crucial stage of STLC.It helps to check quality of product and also improves efficiency of
+test process.
+Scalability Test - It's a type of load testing that measures the ability to scale up/down after increasing no. of users
+Orthogonal Array Test - It's a test technique which is used when system is being tested under hugh number of inputs. It
+helps to maximize test coverage by pairing and combining the inputs and testing the system. It saves testcases and time
+Localization Test - It's to verify software behavior, accuracy for specific location or region.
+Data Migration Test - It's to check if any data loss or not for transferring data from legacy system to new system
+Fuzz Test - It's an automated test technique to inject invalid inputs to check coding error and loopholes.
+Buddy Test - It's a process where dev and QA are paired for test scenarios.
+Reliable Test - It's a purpose of testing to assure s/w is bug-free and reliable enough for it's expected purpose.
+Postmortem Test - It's to identify the causes of failure and how to prevent the failure
+Load Test - It's a performance testing to check software behavior under load.
+Stress Test - When system is stressed beyond it's specification then we need to check when it fails.
+Volume Test - It's to check an s/w application with certain amount of data. It can be data size or size of file
+Spike Test - Checking the app performance for sudden increase in load. It runs for 1 or 2 hrs
+STLC - It's a procedure of testing a software.
+STLC Stages - Requirement Analysis > Test Planning > Test Strategy > Test Environment > Test Execution > Test Closure
+Requirement Traceability Matrix - It's a document that maps and trace user requirement with testcases. It's to check
+all testcases covered and no functionality should miss while testing.
+Equivalence Partitioning - For large number of testcases it's not possible to check each testcase due to limited time.
+So,This method is used to divide the input data into different equivalent classes to set the finite number of testcases
+Boundary Value Analysis - It has been seen that input values at the extreme ends of the input domain causes more error.
+So,This method is used to identify the error that exist in the boundaries rather than centre of the input domain.
+Decision Table Techniques - This is the method to identify all the combinations of inputs and outputs for the testcases.
+It's also called Cause Effect Testing.
+Fault Based Test Technique - It's technique to inject predefined fault into code to check pre-specified fault in output
+Severity - It's a degree of impact that defect has on development.
+Priority - It's a level of importance assigned to a defect
+High Severity + High Priority - Key feature not works,      High Severity + Low Priority - Feature that rarely uses
+Low Severity + High Priority - Co. logo wrong in color,     Low Severity + Low Priority - Caption is in wrong font
+Verification - Are we building the product right?           It's a process to check the product of a given phrase of
+software development fulfill the requirements determined in previous phrase
+Validation -  Are we building the right product?            It's a process to check the software at the end of it's
+development to ensure its free from failures and meet the requirements.
+Error - A mistake in coding by programmer                   Defect - Error found by tester
+Bug - Defect accepted by dev team                           Failure - Build doesn't meet the requirement
+Fault - Incorrect code that leads to failure or defect
+Endurance Test - It's also known as Soak Test.It's a type of non-functional testing where an application can resist the
+significant load for a long period of time to identify the performance related issues. It's to check memory leaks,
+stability issues and also degradation in performance after long duration.
+Test Case,Test Scenario - Testcase is a step to verify the Scenario, Scenario is a series of testcases.
+Test Strategy - It's a test approach.Basically in testplan we write test strategy. Here we mentioned what type of test
+we will perform like functional,non-functional,regression. Also mentioned what step we will take care of during issues
+and also mentioned after fixing issues it will be available for UAT to end users.
+FRS - Business Analyst prepares FRS (Functional Requirement Specification). FRS required to developer to understand
+the product and what they supposed to create, Also it needs to understand the tester to make testcases and what to
+test in the product.
+Security Test - It's required to check authentication,authorization,confidentiality,integrity. Actual security depends
+on Security Requirements.
+High Level Design - It signifies the overall system design, It also called macro-level design
+Low Level Design - It signifies the procedure of components level design, It also called micro-level design
+Cause Effect Graph - It's a black box testing technique that graphically represents the relationship between
+output and the factors that influence the output.
+4 Components of FIT - Functionality, Performance, Security, Configuration
+Top-down Integration Test - Here main module is designed first then sub-modules
+Bottom-Up Integration Test - Here submodules are designed first then the main module.
+Mutation Test - It's a form of white box testing.It's to check changes in source code detects in the test suites.
+Test Metrics - It's to improve efficiency and effectiveness of the software testing process.
+Stub in Integration Test - It's a "Called Programs" and are used in Top-down Integration Test
+Driver in Integration Test - It's a "Calling Program" and are used in Bottom-up Integration Test
+Chronological Order of Software Test - Unit Test > Integration Test > System Test > UAT
+
+Review - It's a process to check the software's coding standard, testcase methods and template standards.
+Types of reviews in Software Test -
+Software pair reviews - It's done by main author of software.Code review-source code checked, Pair Programming-2 people
+develop a code together, Walkthrough-Author and associates gather to discuss on defects, Inspection-Persons to check
+the defined set of instructions to find defects, Technical review-Qualified team checks the software.
+Software management review - It's to check work status and making decision of software.
+Software audit review - It's an external review.It's for defect prevention and specification
+
+Technical risks in test - Continuous changes in requirements, Product is complex to implement
+Configuration management - It's a management determines the items that make up the software or system.
+PRAD - Product Requirement Analysis Document. It's prepared by marketing and technical managers.
+FURPS - Functionality, Usability, Reliability, Performance, Sustainability
+Slippage Ration - It's a ratio of Actual time and Extra time taken by tester to test a product.
+
+Test Environment - It's an environment where Testers executes their test. it can be collection of software and hardware
+Test Bed - It's a performance environment for the testers. It contains OS,Configuration management for products,
+hardware, network etc
+Hotfix - This term is used for fix a severe bug found in a production by client.
+Client Server - An application which runs in the client side but access the remote server for information
+Web application Server - An application which runs entirely on web browser.
+Deferred in Test - When bug is expected to fix on next release.
+Defect Cluster - It means small number of modules contain most of the defects.
+Issue and Risk - Issue is what is already occurred and Risk is a potential issue that may or may not happen
+Showstopper - It's a kind of defect which needs to fix ASAP otherwise we can't proceed to next step
+80/20 Pareto Analysis - It's an idea that 80% of a project's benefit can be achieved by doing 20% of Work.

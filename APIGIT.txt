@@ -1,0 +1,111 @@
+API - Application Programming Interface is used to interact application components.
+Cons- If it's hacked, all the applications using it will be affected, if it's not secured properly then other will
+target it. ALso using ThirdParty APIs introduces risk
+Pros - It allows different system to communicate also different components of DB can be accessed.
+
+REST API - It stands for Representational State Transfer. It enables interaction between different software system over
+the internet using HTTP methods and permits different data format like JSON,HTML,XML etc.
+SOAP API - It stands for Simple Object Access Protocol. It uses XML-based messaging protocol to communicate with
+different platforms over the internet and permits only XML.
+
+Advantages of REST API -
+Reliability - Client info is not saved. Also, It delivers expected outcomes with consistent performance.
+Performance - It supports cache for large request
+Transparency - It's easy to understand the documents and tool that helps developer to use of API
+Simplicity - It reduces the learning curve for the New Users.
+Ability to evolve - It's easy to adopt new requirement
+
+Method -
+Get - Read Operation. Server transfer the data to client
+Post - Create Operation. Client send data to server
+Put - Update Operation. Client send data about the resource to server
+Delete - Delete Operation. Client send unique identifier of resource to server, Server should return empty response.
+
+Put and Patch -
+The PUT method replaces an entire resource, while the PATCH method partially updates an existing resource by modifying
+only the specified fields.
+
+Status - 1*-Informational 2*-Success 3*-Redirection 4*-Client Error 5*-Server Error
+200-OK      201-Created     300-Multiple Choices       400-Bad Request      401-Unauthorized
+402-Payment Requirement     403-Forbidden       404-Not Found       408-Request Timeout     424-Failed Dependency
+429-Too many requests       500-Internal Server Error       501-Not Implemented     502-Bad Gateway
+503- Service Unavailable        504-Gateway Timeout
+JSON Schema fields - Type,Required,Properties
+Collection variable - It's scoped to a single collection.Declares API KEY,TOKEN as global variable.use it as {{token}}
+Environment variable - It's scoped to the environment.It can be accessed by any collection within the environment.
+
+API Automation test in POSTMAN -
+pm.test("Check status code", function(){
+    pm.response.to.have.status(200)})
+
+API and WebService - Api supports HTTP/HTTPS where Webservice only HTTP.Api supports XML,JSON where Webservice only XML.
+All Webservice is API but all API is not.
+Auth Types - Inherit auth from parent,Bearer Token,JWT Token,API Key,Basic Auth.
+BaseURI - It indicates root address of the resource.
+XML,JSON in selenium - XML (eXtensible Markup Language) file is used in DOM (Document Object Model) structure. To read
+XML File format we need to parse it using 'xml.etree.ElementTree'
+For JSON (Javascript Object Notation), It's very easy to understand and read, write the file
+Parameter,variable,Argument -
+def greet(name):     greet -> function      name -> variable
+    pass
+greet("Rohit")       name -> Parameter      Rohit -> Argument
+Function,Method - Fn defines outside the class. Method defines under class, Function tied with object is called method
+
+Load Test Record - Browser settings > Network Settings > Manual Proxy > Localhost / 8888 > Checkbox ticker > OK
+Certificate - Import > jmeter folder bin > Certificate > Ticked 1st checkbox > OK
+Jmeter - Test plan > Add > Non test element > HTTP Test script recorder > Test controller > start
+Blazemeter - Open plugin > Start > do activity > Stop > Save to jmx
+Thread Group - It's a set of threads or users executing the same scenario.
+Ramp Up Period - How many times users on the website
+Basic Listeners - Agg report, View result tree, Graph Results
+Throughput - It's the number of request that are proceed per time unit by server
+Std dev - The lesser this value more consistent the data.
+Data Driven Test Setup - Thread Group > Add > Config element > CSV Data Config. Variable names =v1,v2 and use params
+as ${v1},${v2}
+
+Devops - It's a software development approach which involves continuous development, continuous testing, continuous
+integration, continuous deployment throughout it's development lifecycle. It's an evolution from Agile model of s/w dev
+Devops Stages -
+a.Version control - Maintains different versions of the code
+b.Continuous Integration - Compile,Validate,Code Review,Unit test,Integration Test
+c.Continuous Delivery - Deploying the build application to test servers, performing UAT
+d.Continuous Deployment - Deploying the tested application on the product server for release
+Advantages - Time taken to create and deliver software is reduced and also complexity to maintain it. Continuous
+Integration and Continuous Delivery ensures faster time to market.
+
+Jenkins - It's a java based open-source automation tool. It functions as server and used as CICD tool
+Pipeline - It's a group of jobs which are interlinked with one another in a sequence (Build>Deploy>Test>Release)
+Scripted Pipeline -
+node {
+    stage('Build') {
+        // script here
+        echo 'Build the project..'
+    }
+    stage('Test') {
+        // script here
+        echo 'Test the project..'
+    }
+}
+Declarative Pipeline -
+Pipeline {
+    agent any
+    stages {
+            stage('Build') {
+                steps {
+                    // script here
+                    echo 'Build the project..'
+                    }
+                }
+            stage('Test') {
+                 steps {
+                    // script here
+                    echo 'Test the project..'
+                    }
+                }
+            }
+        }
+Stages              Build       Test        Deploy      Release
+Environment         Dev         QA          Staging     Product
+CI  ----------------------------->
+CD (Delivery) -------------------------------->
+CD (Deploy) ----------------------------------------------->

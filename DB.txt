@@ -1,0 +1,145 @@
+CREATE DATABASE abc;         # create DB
+SHOW DATABASES;              # show DBS
+USE abc;                     # select DB
+DROP DATABASE abc;           # drop DB
+SHOW TABLES;                 # show tables
+DESC xyz;                    # describe table
+
+CREATE TABLE employee (                                     # CREATE TABLE
+  emp_code INT AUTO_INCREMENT PRIMARY KEY,
+  emp_name VARCHAR(20) NOT NULL,
+  emp_age INT CHECK (emp_age >= 20 AND emp_age <= 60),
+  emp_gender ENUM('M', 'F'),
+  emp_doj DATE,
+  emp_design VARCHAR(20) UNIQUE DEFAULT 'SOFT ENGG',
+  emp_salary FLOAT(7,2)
+);
+
+INSERT INTO Employee (emp_code, emp_name, emp_age, emp_gender, emp_doj, emp_design, emp_salary)     # INSERT DATA
+VALUES
+(1, 'Rohit', 33, 'M', '2022-12-12', 'Test', 4000.00),
+(2, 'Raj', 34, 'F', '2022-11-11', 'QA', 5000.00);
+
+SELECT * FROM employee                                                              # Select all employee details
+SELECT emp_name,emp_design FROM employee                                            # Select specific employee details
+CREATE TABLE employee1 AS SELECT * FROM employee                                    # Duplicate Table
+SELECT * FROM Employee ORDER BY emp_salary DESC                                     # Order Table
+ALTER TABLE Employee ADD emp_gender VARCHAR(10);                                    # Add column
+ALTER TABLE Employee ADD emp_gender VARCHAR(10) AFTER emp_name;                     # Add column specifically
+ALTER TABLE Employee ADD emp_rank VARCHAR(10) FIRST;                                # Add column at first
+ALTER TABLE Employee MODIFY emp_gender VARCHAR(20);                                 # Modify column
+ALTER TABLE Employee MODIFY emp_gender VARCHAR(20), ADD PRIMARY KEY (emp_gender);   # Modify Constraints
+ALTER TABLE Employee MODIFY emp_gender VARCHAR(10) AFTER emp_name;                  # Modify column specifically
+RENAME TABLE Employee1 TO Employee2;                                                # Rename Table
+TRUNCATE TABLE Employee2;                                                           # Delete Table values
+DROP TABLE Employee2;                                                               # Delete Table
+UPDATE Employee SET emp_name='Ram' WHERE emp_design='QA';                           # Update name
+UPDATE Employee SET emp_salary=emp_salary+(emp_salary*0.1) WHERE emp_name='Rohit';  # Salary Hike 10%
+UPDATE marks SET tot=phy+chem+math;                                                 # Add/Update marks
+DELETE FROM Employee WHERE emp_gender>=30 ;                                         # Multi Delete
+SELECT emp_name "NAME", emp_age "AGE" FROM Employee;                                # Change Heading
+SELECT emp_name,emp_salary FROM Employee WHERE emp_salary>=2000 ORDER BY emp_salary DESC;       # ORDER Wise
+SELECT emp_name,emp_salary FROM Employee WHERE emp_salary>=2000 AND emp_design NOT IN ('QA');   # AND Operator
+SELECT emp_country,max(emp_salary) FROM Employee GROUP BY emp_country HAVING max_age>=26;       # MAX Usage
+SELECT emp_name FROM Employee WHERE emp_name LIKE 'Ro%'                             # Starts with Ro
+SELECT emp_name FROM Employee WHERE emp_name LIKE '____%'                           # At least must have 4 letters
+SELECT Count(DISTINCT emp_country) FROM Employee;                                   # Total country
+SELECT emp_name,emp_salary FROM Employee WHERE emp_salary=(SELECT max(emp_salary) FROM Employee);   # 1st Salary
+SELECT emp_name,emp_salary FROM Employee WHERE emp_salary=(SELECT max(emp_salary) FROM Employee     # 2nd Salary
+WHERE emp_salary <> ( SELECT max(emp_salary) FROM Employee));
+
+Reference Integrity - It refers to relation between tables, It's a logical dependency of foreign and primary key.
+it requires 2 tables master table and transaction table.
+CREATE TABLE std_details(                           CREATE TABLE mark_details(
+reqno VARCHAR(5) PRIMARY KEY,                       reqno VARCHAR(5) ,
+name VARCHAR(20)                                    sem CHAR(2),
+);                                                  FOREIGN KEY(reqno) REFERENCES std_details(reqno)
+                                                    );
+Can't Enter mark_details until std_details inserted
+Can't update/drop std_details if reqno has mark_details
+
+                Customer
+cust_code	cust_name	cust_mail
+C001	    Robert	    rob@gmail.com
+C002	    John	    john@gmail.com
+C003	    William	    will@gmail.com
+C004	    Smith	    smt@gmail.com
+C005	    Kumar	    kum@gmail.com
+C006	    Peter	    pet@gmail.com
+                Item
+item_code	item_name	item_price
+ITM1	    AA	        300
+ITM2	    BB	        500
+ITM3	    CC	        200
+ITM4	    DD	        400
+            Order_details
+order_no	order_date	cust_code	item_code	order_qty
+ORD1	    2024-01-15	C004	    ITM2        5
+ORD2	    2024-01-16	C002	    ITM4	    3
+ORD3	    2024-01-17	C005	    ITM2	    7
+ORD4	    2024-01-18	C001	    ITM3	    10
+ORD5	    2024-01-19	C002	    ITM2	    4
+
+SELECT cust_name,item_code,order_qty FROM Customer                      # Inner Join
+INNER JOIN Order_details
+ON Customer.cust_code = Order_details.cust_code;
+
+SELECT cust_name,item_code,order_qty FROM Customer                      # Left Join
+LEFT JOIN Order_details
+ON Customer.cust_code = Order_details.cust_code;
+
+SELECT order_no,cust_name, item_name, order_qty                         # Multi Inner Join
+FROM ((Order_details
+INNER JOIN Customer ON Order_details.cust_code = Customer.cust_code)
+INNER JOIN Item ON Order_details.item_code = Item.item_code);
+
+SELECT A.order_no, B.order_qty                                          # Self Join
+FROM Order_details A
+INNER JOIN Order_details B
+ON A.order_no <> B.order_qty AND A.order_no=B.order_no;
+
+SELECT CEIL(15.1);                                                      16
+SELECT FLOOR(15.8);                                                     15
+SELECT ROUND(15.5);                                                     16
+SELECT POWER(5,3);                                                      125
+SELECT LEFT('HELLO, HOW ARE YOU', 9);                                   'HELLO, HO'.
+SELECT RIGHT('HELLO, HOW ARE YOU', 9);                                  'W ARE YOU',
+SELECT CURTIME();                                                       'HH:MM:SS'
+
+SELECT * FROM Customers LIMIT 2                                         1,2 data displays
+SELECT * FROM Customers LIMIT 2 OFFSET 2                                3,4 data displays
+SELECT customer_id FROM Customers                                       All id will displays including duplicates
+UNION ALL
+SELECT customer_id FROM Orders
+
+SELECT CAST('true' as BOOLEAN)                                          Data type set
+SELECT                                                                  CASE usage
+    item AS Product_name,
+    SUM(amount) AS Qty,
+    CASE
+        WHEN SUM(amount) > 500 THEN 'the most'
+        WHEN SUM(amount) < 500 THEN 'the least'
+        ELSE 'the medium'
+    END AS amount
+FROM
+    Orders
+GROUP BY
+    item;
+SELECT customer_id, NULLIF(age, 22) FROM Customers;                     NULLIF returns null when age=22
+SELECT customer_id, COALESCE(age, 0) FROM Customers;                    COALESCE returns not null
+
+Database - It's an organised collection of data.It allows us to organise the data into tables,columns and indexes to
+find the data quickly.
+R-DBMS - It's an advanced version of DBMS. It stores in tabular-format, Supports multi-user, It offers data Integrity
+& Security, Easy to back up and recovery system, It can be integrated in Java,php etc.
+Non-DBMS - It stores in Non-tabular-format. Ex - Mongodb
+PRIMARY KEY - It's a constraints, Uniquely identified record in DB. It must be unique and Null,Duplicate is not
+allowed and a table can contain only one PRIMARY KEY
+FOREIGN KEY - It requires 2 tables and It's combination of columns whose values match a primary key in different table.
+Malware - It's a destructive software such as virus and ransomware, It can take control of your machine to monitor
+your activity and send it to the attacker's home server.
+Phishing - If you open email then your computer will be infected & it will collect personal data like credentials
+SQL Injection - It's a code injection technique that might destroy the DB.It's a replacement of malicious code in SQL
+XSS - Cross-Site Scripting attack damages website's reputation.Sensitive data is taken without realizing the problem
+Dos - Denial-of-Service attacks are performed by several computers at same time.They bombard the network with such
+traffic that no real network traffic get through and the system shuts down.

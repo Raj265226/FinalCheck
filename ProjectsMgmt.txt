@@ -1,0 +1,92 @@
+Kanaban - It's a popular framework used to implement agile and devops software development. It requires real-time
+communication of capacity and full transparency of work. Work items are represented in Kanban Board and allowing
+members to see the state of every piece of work at any time.
+Kan=Card,Ban=Signal. It comes from japanese co. Toyota in the 1940's.It's also called pull based system.
+5 Properties -
+Visualise the workflow, Limit work-in-progress, Measure and manage flow,
+Make process and policies explicit, Use models to recognise improvement opportunities
+Benefits -
+a.A well-designed kanban system helps team to identify and reduce the process waste in all of its form
+b.Visualization is the most recognizable feature in kanban board.It helps to know instantly how the tasks are moving
+c.Throwing extra resources at a problem is a possible solution when there is a budget.
+Little's law - TP=WIP/CT. For any given Work In Progress, ThroughPut will increase if Cycle-Time is reduced.
+Agile - It's an approach of s/w development under which requirements and solutions evolve through the collaborative
+effort of self-organizing and cross-functional teams and their customers/end users.
+In Agile testing, all the members of the team with specific skills and certain expertise to ensure the timely delivery
+of a product with the release of additional features at frequent intervals
+Agile Principles -
+a.Early and continuous delivery - Piece of product is given demo instead of long wait like waterfall model
+b.Welcome changing requirements - It brings +ve outcome as cost is involved and customer satisfies with the changes
+c.Deliver working s/w - present working s/w to customers at regular intervals to see if it matches the requirement list
+d.Business people and developers work together daily throughout the project - It helps the developers to get quickly
+answer to the questions and also for business people
+e.Build projects under motivated individuals - For this phrase keep the communication channel open. provide team tools
+and support to get the job done
+
+Scrum Framework -
+    Roles - Product Owner (Business Analyst), Scrum Master, Team
+    Artifacts - Product Backlog, Sprint Backlog, Burn-down charts
+    Ceremonies - Sprint Planning, Sprint Review, Sprint Retrospective, Daily Scrum Meetings
+
+Product Owner - Product Owner gathers the inputs from customers,teams,managers
+Scrum Master - His responsibilities to protect team and development process.Guides team to give their best performance
+Scrum Team - Typically 3-9 members including developers,testers,designers.All should give full time.Team must be
+self-organising to the goal
+
+Product Backlog - It's the feature of the product. An ordered list of what is needed to improve the product.
+a.List and priorities the task-level details to execute a plan - to do list
+b.Includes user stories, changes to existing functionalities, bug fixes.
+Sprint - In X days product is getting released.It must be <=30 days.It'll cancel if govt rules and regulation changes
+Sprint Backlog - It's a task breakout.By doing daily scrum meeting it's decided what to today and tomorrow. Also set
+the time. Once its set then its don't change
+Burn-down Chart - It's a visual display of work completed and remaining in the project. Benefit of this chart is to
+track team's progress.Timely prevention of issues.
+
+Sprint Planning meeting - Product owner sets the meeting with teams,scrum master to check the priority.Sprint Backlog
+is the outcome
+Sprint Review - Team presents what is done and gives demo of new feature.Ideally it takes 2-4 hours. Whole team must be
+in the meeting
+Sprint Retrospective - It happens after sprint completion. It takes 30 mins.Whole team participates the meeting and its
+decided what to start and stop or continue doing.
+
+MVP - It stands for minimum value product. In minimum, none wants to buy a product. In MVP, we build good enough build
+to attract users. It's basically test the idea with the real users before committing large budget to the product's full
+development.
+
+Waterfall vs Agile - In waterfall model, we gives demo at the end. so,if there is any mistake in the beginning we need
+to rework it. Where in scrum we gives demo to small section.So,If there is any changes needed then its helpful for team
+to do it.It helps the product to become error free before launch.
+Pros and Cons of Agile -
+Pros -
+a.Continuous delivery of the software ensures customer satisfaction
+b.All the stakeholders are involved in the process which leads to excellent and good design
+c.It facilitates close interaction between business people and developers
+d.Breaking down the project into iterations allows team to focus on high quality development,testing and collaboration
+Cons -
+a.If software is large then it's tough to determine the effort level at the beginning of s/w development lifecycle.
+b.In agile methodology, Documentation and Designing take a back seat.
+c.The decision-making is crucial for the development process. It requires seniority and experience. So, freshers dont
+get chance here.
+d.Active involvement and collaboration required throughout the process
+
+Scrum of Scrums - The term is used when there are multiple teams involved in the project.It refers to the daily scrum
+meeting. In this scenario, different team is responsible for separate scrum meeting. To maintain collaboration and
+communication among the teams a separate meeting is conducted where all the teams participate.
+Velocity of Sprint - It's one of the planning tools used to estimate the speed of the work and time of completion of
+the project. Calculation is done after reviewing the work done by team successfully completed earlier sprints.
+For example if team completes 5 stories during 2 weeks sprint and each story worth 3 story points. then velocity is
+15 points per sprint.
+Quality of Agile Testers -
+a.Capable to understand the requirements
+b.Must aware of the agile principles
+c.Prioritize the work based on requirements
+d.Good communication skills to communicate with business associates,developers.
+Zero Sprint - It refers to the first step that comes before the first sprint. It's like pre-step to the first sprint.
+Zero sprint includes some activities that must be completed before starting the project like environment setup,
+preparing backlogs and also some tasks that are usually done before beginning the actual development
+Duration of Scrum Sprint - It depends on project size , ideally 3-9 members takes 3-4 weeks to complete a scrum script
+Sprint Planning Meeting vs Sprint Retrospective Meeting -
+Sprint planning meeting involves all the scrum roles like product owner , scrum master,scrum team. All comes together
+to discuss the project priority and backlog items. Usually, It's a weekly event that lasts for about an hour.
+In Sprint retrospective meeting, all scrum roles comes together to discuss good and bad elements of the sprint.
+Generally it's an extension of sprint planning meeting and can last up to 2-3 hours
