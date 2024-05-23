@@ -260,3 +260,56 @@ print(next(my_iterator))  # Output: 1
 print(next(my_iterator))  # Output: 2
 for item in my_iterator:  # Iterating through the remaining elements
     print(item)  # Output: 3, then 4
+# Permutation
+def gn_pr(string,current=''):
+    if len(string) == 0:
+        print(current)
+    else:
+        for char in string:
+            new_string=string.replace(char,'',1)
+            gn_pr(new_string,current+char)
+
+string="abcd"
+gn_pr(string)
+
+from itertools import permutations
+s = "abcd"
+perms = [''.join(p) for p in permutations(s)]
+for perm in perms:
+    print(perm)
+
+# input "aaaabbbbbcccdddd" output a4b5c3d4
+def compress(string):
+    new_string=''
+    count=1
+    for i in range(len(string)-1):
+        if string[i] == string[i+1]:
+            count += 1
+        else:
+            new_string += string[i] + str(count)
+            count = 1
+    new_string += string[-1] + str(count)
+    return new_string
+
+print(compress("aaaabbbbbcccdddd"))
+
+# Fabonucci
+def fab(n):
+    if n <= 1:
+        return n
+    else:
+        return fab(n-1)+fab(n-2)
+print([fab(i) for i in range(10)])
+
+#Ana gram
+words = ["listen", "silent", "enlist", "inlets", "tinsel", "banana", "bbnnaa", "apple", "papel", "baker"]
+anagram_map = {}
+for word in words:
+    sorted_word = ''.join(sorted(word))
+    if sorted_word in anagram_map:
+        anagram_map[sorted_word].append(word)
+    else:
+        anagram_map[sorted_word] = [word]
+anagram_list = [ana for ana in anagram_map.values()]
+print(anagram_list)
+
