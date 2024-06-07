@@ -50,6 +50,27 @@ def primeCheck(number):
 n = int(input("Enter number "))
 primeCheck(number=n)
 
+# Prime Check between numbers 
+def is_prime(num):
+    is_prime = True
+    for n in range(2, num):
+        if num % n == 0:
+            is_prime = False
+    if is_prime:
+        return num
+
+def prime_numbers_between(n1, n2):
+    prime_numbers = []
+    for num in range(n1, n2 + 1):
+        if is_prime(num):
+            prime_numbers.append(num)
+    return prime_numbers
+
+n1 = int(input("Enter the starting number: "))
+n2 = int(input("Enter the ending number: "))
+prime_list = prime_numbers_between(n1, n2)
+print("Prime numbers between", n1, "and", n2, "are:", prime_list)
+
 # dictionary - It's a collection of data, which is stored as key-value pair. dictionaries are enclosed with curly braces.
 # key cant be duplicated but values can
 dict = {
