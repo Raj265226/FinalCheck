@@ -50,15 +50,6 @@ def primeCheck(number):
 n = int(input("Enter number "))
 primeCheck(number=n)
 
-# Prime Check between numbers 
-def is_prime(num):
-    is_prime = True
-    for n in range(2, num):
-        if num % n == 0:
-            is_prime = False
-    if is_prime:
-        return num
-
 def prime_numbers_between(n1, n2):
     prime_numbers = []
     for num in range(n1, n2 + 1):
