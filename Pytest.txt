@@ -13,9 +13,9 @@ class TestClass:
         assert "h" in x
 
             # Markers
-pytest.ini -
-addopts = --strict-markers                    # Other markers will raise error as its not on this file
+pytest.ini -          
 [pytest]
+addopts = --strict-markers                 # Other markers will raise error as its not on this file
 markers =
             sanity
             regression
