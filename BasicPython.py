@@ -119,37 +119,6 @@ result1 = calculator(5,6,add)
 result2 = calculator(5,6,substract)
 print(result1, result2)
 
-# From turtle module import class Turtle. From that class make an object t
-# Different object function is independent of each other. We can say that they are each a separate instances
-# When user taps a specific key on keyboard & the code that allows us to do what user does, are called Event Listeners.
-# '_' signifies that the loop variable is not actually needed or used within the loop block
-import random
-from turtle import Turtle
-import turtle as t1
-t = Turtle()
-t1.colormode(255)
-
-def random_color():
-    r = random.randint(0,255)
-    g = random.randint(0,255)
-    b = random.randint(0,255)
-    return (r,g,b)
-t.speed("fastest")
-for _ in range(5):
-    t.color(random_color())
-    t.forward(50)
-    t.penup()
-    t.forward(10)
-    t.pendown()
-    t.forward(40)
-    t.left(72)
-
-def spirograph(gap_size):
-    for _ in range(int(360/gap_size)):
-        t.color(random_color())
-        t.circle(100)
-        t.setheading(t.heading()+gap_size)
-spirograph(5)
 # Tuples - it's same like a list but once created value can't be modified.
 piano_tuples = ["a","b","c","d","e","f","g"]
 print(piano_tuples[2:5])
