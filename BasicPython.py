@@ -29,13 +29,30 @@ f = lambda x:x**2
 sq = map(f,my_list)
 print(list(sq))
 
-#highest number
+#highest number and second highest number
 numbers = [78,89,22,90,55,23]
 highest_number = 0
-for number in numbers:
-    if number>highest_number:
-        highest_number=number
+second_highest_number = 0
+for n in numbers:
+    if n > highest_number:
+        highest_number = n
+    elif n > second_highest_number and n !=highest_number:
+        second_highest_number = n
 print(highest_number)
+print(second_highest_number)
+
+#lowest number and second lowest number
+numbers = [10,30,20,5,4,90,80,60]
+lowest_number=numbers[0]
+second_lowest_number=float('inf')
+for i in numbers:
+    if i < lowest_number:
+        second_lowest_number = lowest_number
+        lowest_number = i
+    elif i < second_lowest_number and i != lowest_number:
+        second_lowest_number = i
+print(lowest_number)
+print(second_lowest_number)
 
 # Prime check
 def primeCheck(number):
