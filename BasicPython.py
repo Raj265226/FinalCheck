@@ -35,6 +35,7 @@ highest_number = 0
 second_highest_number = 0
 for n in numbers:
     if n > highest_number:
+        second_highest_number = highest_number
         highest_number = n
     elif n > second_highest_number and n !=highest_number:
         second_highest_number = n
