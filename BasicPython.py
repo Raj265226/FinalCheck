@@ -377,3 +377,25 @@ def rohit(fn):
 def hello():
     print('Hi Hello')
 hello()
+
+# sets of number from the list where 2 numbers addition equals to total
+x = [1,2,3,4,5,6,7,8,9,10]
+total = 15
+result = []
+for i in range(len(x)):
+    for j in range(i+1,len(x)):
+        if x[i] + x[j] == total:
+            result.append((x[i], x[j]))
+print(result)
+
+# armstrong
+def arms(nums):
+    sum = 0
+    for i in range(len(nums)):
+        sum += int(nums[i])**3
+    if sum == int(nums):
+        print('armstrong')
+    else:
+        print('Not armstrong')
+
+arms(input('Enter number: '))
