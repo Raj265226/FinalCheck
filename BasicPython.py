@@ -320,4 +320,60 @@ for word in words:
         anagram_map[sorted_word] = [word]
 anagram_list = [ana for ana in anagram_map.values()]
 print(anagram_list)
+---------------------------------------------New Added---------------------------------------------------------
+# reverse first name without using inbuilt
+name='Rohit Santra'
+result =''
+temp=''
+for i in range(len(name)):
+    if name[i] == ' ':
+        result = temp + name[i:]
+        break
+    temp = name[i] + temp
+print(result)
 
+# first repeat number from the list
+lst = ['a', 'd', 'b', 'c', 'c', 'a']
+for i in lst:
+    if lst.count(i) == 1:
+        print(i)
+        break
+
+# List of repeated number
+nums = [4, 3, 6, 2, 3, 1, 4]
+repeated_num = []
+for i in nums:
+    if nums.count(i) > 1:
+        repeated_num.append(i)
+print('repeated',list(set(repeated_num)))
+
+# Number of vowels in sentence
+sentence = "My name is Rohit, live in Kolkata"
+vowels = "aeiouAEIOU"
+count = 0
+for char in sentence:
+    if char in vowels:
+            count += 1
+print("Number of vowels:", count)
+
+# A generator is a special type of function that produces values one at a time,
+#  on demand, instead of creating and storing all values in memory at once.
+def number_generator(n):
+    for i in range(n):
+        yield i   # yield returns value and pauses function.
+print(number_generator(5)) # <generator object>
+gen = number_generator(5)
+for num in gen:
+    print(num)
+
+# Decorator is a function that modifies another function’s behavior without changing its code.
+def rohit(fn):
+    def santra():
+        print('Before fn')
+        fn()
+        print('After fn')
+    return santra
+@rohit
+def hello():
+    print('Hi Hello')
+hello()
