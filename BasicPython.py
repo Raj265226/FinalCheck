@@ -399,3 +399,12 @@ def arms(nums):
         print('Not armstrong')
 
 arms(input('Enter number: '))
+
+# creditcard check
+def creditcard(x):
+    x = x.replace('-','').replace(' ','')
+    if len(x) == 16 and x[0] in ['4','5'] and x.isdigit():
+        print('It is Credit card number')
+    else:
+        print('Please check number once')
+creditcard(input('Enter number to check validity:- '))
