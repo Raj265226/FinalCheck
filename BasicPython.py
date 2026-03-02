@@ -408,3 +408,17 @@ def creditcard(x):
     else:
         print('Please check number once')
 creditcard(input('Enter number to check validity:- '))
+
+# Binary conversion
+def dec_to_bin(x):
+    if x == 0:
+        return '0'
+    binary = ''
+    while x > 0:
+        binary = str(x%2) + binary
+        x //= 2
+    return binary
+
+print(dec_to_bin(int(input('Enter number:-'))))
+
+
