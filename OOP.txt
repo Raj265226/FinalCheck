@@ -55,6 +55,28 @@ Run-time and Compile-time polymorphism - It's a method Overriding. Python doesn'
 Data mangling - In python we can make class attribute or methods private by using __
 Dunder/Magic Dunder - Having __ before and after the method.
 
+Abstraction - It's the process of hiding implementation details and exposing only the essential features of an object.
+You use steering, brake, accelerator but don't know the engine internal mechanism. It's abstraction.
+
+ Abstract class and method - an abstract class is a class that cannot be instantiated on its own , It allows you
+ to create a set of methods that must be created within the child classes built from the abstract class.
+ An abstract method is a method that is declared in the abstract class but must be implemented by the child class.
+ Abstract classes and methods are a way to create a blueprint for other classes, ensuring that certain methods are
+ implemented in child classes.
+
+from abc import ABC, abstractmethod
+class Vehicle(ABC):  # Vehicle → abstract class , start() → abstract method
+    @abstractmethod
+    def start(self):
+        pass
+class Car(Vehicle):
+    def start(self):
+        print("Car started")
+c = Car() 
+c.start()
+
+
+
 Recursion - It's a process in which function calls itself directly or indirectly to solve a problem.
 Advantage of recursion - It makes some algorithms easier, In some cases it reduces lines of code.
 Disadvantages of recursion - It takes a lot of memory, It's hard to debug, If it's not defined properly then it leads
