@@ -19,13 +19,13 @@ emp.display()
 Constructor - It's a special method __init__() the constructor of the class and initializing the objects of the class.
 It's called automatically when instance is created. Self keyword is the first argument and then we create many.
 class Employee:
-    def __init__(self, id):
+    def __init__(self, id): # reference of the current object and allows object to access own attributes and methods
         self.id = id
     def display(self):
         print(self.id)
-emp1 = Employee(2)
+emp1 = Employee(2)  # emp1 -> Object , Employee() -> Class Constructor
 emp1.display()
-emp2 = Employee(3)
+emp2 = Employee(3) # self refers to object emp2
 emp2.display()
 Non parameterized constructor uses when we don't want to manipulate the value.
 
@@ -50,12 +50,6 @@ Invoking parent or child class method depends on object being used to invoke.
 Operation Overloading - In python same operator behaves differently with different types. + operator works as an
 addition in arithmatic, but works as concatenate in strings. This feature allows same operator to have different
 meaning according to the context is called operator overloading.
-
-Object-oriented vs Procedure-oriented -
-1.It makes development and maintenance easier            It's not
-2.It provides data hiding. so, it's secure.              It doesn't have any security
-3.It simulates real world entity                         It's not
-4.Ex-Java,Python,.Net,C#                                 C,pascal,vb
 
 Run-time and Compile-time polymorphism - It's a method Overriding. Python doesn't support Compile time polymorphism.
 Data mangling - In python we can make class attribute or methods private by using __
