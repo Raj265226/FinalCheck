@@ -10,12 +10,6 @@ WebDriver - It's an automation framework like selenium that allows you to progra
  It's not a class or method but an interface. Webdriver interface depends on the browser you want to automate. Like
  for googlechrome the implementation class is Chromedriver.
 
- Abstract class and method - an abstract class is a class that cannot be instantiated on its own , It allows you
- to create a set of methods that must be created within the child classes built from the abstract class.
- An abstract method is a method that is declared in the abstract class but must be implemented by the child class.
- Abstract classes and methods are a way to create a blueprint for other classes, ensuring that certain methods are
- implemented in child classes.
-
  Data driven test vs Keyword driven test
  a.DDT can conduct testing using any variables,values,stored data.
    KDT can only use specific keyword
