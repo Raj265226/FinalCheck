@@ -142,4 +142,4 @@ Phishing - If you open email then your computer will be infected & it will colle
 SQL Injection - It's a code injection technique that might destroy the DB.It's a replacement of malicious code in SQL
 XSS - Cross-Site Scripting attack damages website's reputation.Sensitive data is taken without realizing the problem
 Dos - Denial-of-Service attacks are performed by several computers at same time.They bombard the network with such
-traffic that no real network traffic get through and the system shuts down.
+traffic that no real network traffic get through and the system shuts down
