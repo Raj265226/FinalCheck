@@ -1,0 +1,96 @@
+API Testing - Type of Sw test focus on API (Application Programming Interface) works correctly instead of UI,
+              it tests backend-logic
+Why? - API are the core communication layer between Application,Databases and Services. If it fails UI will fail.
+
+------Authorization------
+
+Authenticaion (OTP) -> Authenticated (Login) -> Authorization (Access)
+Defference - Authentication - Verifies who u r?      Happens first           Usr/pwd
+             Authorization - What u can access       After auth              Access
+Authorization in API Test - Admin can access and delete user.
+                        Admin - Success (203), Normal User - 403 (Forbidden),  User without token - 401 (Unauthorized)
+Different type of Authorization - Role Based Access Control (RBAC) - Admin, HR, Employee and Token Based
+
+-----Header------
+
+Headers - It's an additional information sen between client and server during API Req and Res.
+Types of Headers - Req Header (Client -> Server) and Res Header (Server -> Client)
+    Request Headers -
+                Authorization - Authorization : Bearer abc123  => Server checks valid/invalid token
+                Content-type - Content-type : application/json => Tells server what type of data being sent
+                Accept - Accept : application/json => Tells server what type of data format client wants.
+                User-Agent - User-Agent : PostmanRuntime/7.36.0 => Provides Client/Browser Information
+    Response Headers -
+                Content-type - Content-type : application/json => What type of response is returned
+                Content-length - Content-Length : 256 => Shows size of response
+                Set-Cookie - Set-Cookie : session_id=xyz123 => Used to store session information.
+Why? - Authentication works properly,   Correct data format is used,    Security Validation,    Session Handling,
+        Caching Behavior
+What to Validate? - Required header present or not,     Invalid/missing header behavior,        Correct response header,
+                    Security related header,            Token Expiration Handling
+
+-----Body/Payload------
+
+In API Testing, the body or payload is the actual data sent to the server in an API request.
+Example - Online food =>    Headers-Address, payment-type           Body/Payload-Which food items you need
+Format used for payload/body-
+    JSON                            XML                                             Form-data
+    {'usr':'rj','pwd':26}           <user>  <name>Raj</name>  </user>               usr=raj&pwd=123
+What to validate? - Correct data sent,          Invalid i/p handling,       Required field present,
+                    Empty payload behavior,     Data-type validation
+
+------Parameters------
+
+It's a value passed to an API to send specific information or control how the API behaves
+Example - Get/User/101 -> Parameter , It tells API o fetch the user-data
+Types -                    Used In                                      Example
+    Path Parameter -       URL Path                                     /users/101
+    Query Parameter -      After?inUrl                                  ?Page=1&status=active
+    Header Parameter -     Request Header                               Auth Token
+    Body Parameter -       Request Payload                              JSON Data
+Note - Query Parameter is used for Filtering/Sorting/Searching/Pagination
+Real API Example - POST/Users/101/Orders?Page=1      Authorization:Bearer 123            JSON {'usr':'roh'...}
+                   101- Path param,     Page=1-Query Param,     Auth..:Bearer-Header Param,   JSON - Body Param
+Why? - Invalid values,      Data Types,     Missing Params,     Valid Params,      Boundary Values,     Security Valid
+
+----Codes----
+
+200-OK,             201-Created,            204-Req success but no response,
+400-Bad Req,        401-Auth Required,      403-Forbidden,       404-Not Found,         405-Method not allowed
+500- Internal Err,  502-Bad Gateway,        503-Service Unavailable
+
+-----Methods----
+
+GET - Used to fetch /retrieve data from server
+POST - New User Creation
+PUT - Replace entire data-set
+PATCH - Partially update user data-set
+DELETE - Delete User
+
+-----Token----
+
+It's an unique temporary key used to identify and authorize a user after successfully login.
+Instead of sending usr and pwd everytime, client sends token.
+Types -
+        Bearer Token - Authorization: Bearer xyz123                      => Commonly used
+        JWT (Json Web Token) Token - header.payload.signature            => User Info, Exp Time, Signature
+        OAuth - login with google,fb                                     => Used for 3rd party
+
+------Swagger-----
+
+It's an API documentation.
+Uses- API doc, Easy API Test, Understanding API Quickly, API Content validation, Support Automation, Helps Collaboration
+
+----REST and SOAP-----
+
+REST (Representational State Transfer)-Architectural-type,  JSON,XML can read,  Fast,       Simple,
+                                        Security Basic,     Used in Web/Mobile
+SOAP (Simple Object Access Protocol) - Protocol-Type,       Only XML,           Slow,       Complex,
+                                        Security Advance,   Used in Banking.
+
+----Datadog-----
+
+What it checks? - API Errors, Response Time, CPU Usage, Memory Leak,  Auth logs,  Server Health
+Mechanism- Postman API Req -> Backend app process Req -> App gather logs -> Datadog collects and display logs
+Format - status:error,server:payment-api,env-qa
+
