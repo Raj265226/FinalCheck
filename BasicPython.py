@@ -320,16 +320,37 @@ for word in words:
         anagram_map[sorted_word] = [word]
 anagram_list = [ana for ana in anagram_map.values()]
 print(anagram_list)
+t=[]
+for k,v in anagram_map.items():
+    t.append(v)
+print(t)
 #---------------------------------------------New Added---------------------------------------------------------
-# reverse first name without using inbuilt
-name='Rohit Santra'
-result =''
-temp=''
-for i in range(len(name)):
-    if name[i] == ' ':
-        result = temp + name[i:]
-        break
-    temp = name[i] + temp
+# reverse first name
+Name='Rohit Santra'
+y = []
+for i in Name.split():
+    y.append(i)
+result = y[0][::-1]+' '+y[1]
+print(result)
+
+# reverse first name
+Name='Rohit Santra'
+new=''
+for i in Name.split():
+    if new=='':
+        new += i[::-1]
+    else:
+        new += ' '+i 
+print(new)
+
+# reverse first name without inbuild
+Name='Rohit Santra'
+new=''
+i=0
+while Name[i] != ' ':
+    new = Name[i] + new 
+    i += 1
+result = new + Name[i:]
 print(result)
 
 # first repeat number from the list
@@ -346,6 +367,17 @@ for i in nums:
     if nums.count(i) > 1:
         repeated_num.append(i)
 print('repeated',list(set(repeated_num)))
+
+# List of repeated number (another method)
+nums = [4, 3, 6, 2, 3, 1, 4]
+y=[]
+repeated_num=[]
+for i in nums:
+    if i in y:
+        repeated_num.append(i)
+    else:
+        y.append(i)
+print('repeated',repeated_num)
 
 # Number of vowels in sentence
 sentence = "My name is Rohit, live in Kolkata"
@@ -388,6 +420,17 @@ for i in range(len(x)):
             result.append((x[i], x[j]))
 print(result)
 
+# sets of number from the list where 2 numbers addition equals to total (another way)
+x = [1,2,3,4,5,6,7,8,9,10]
+total = 15
+result = []
+for i in x:
+    for j in x:
+        if i+j == total:
+            if (j,i) not in result:
+                result.append((i,j))
+print(result)
+
 # armstrong
 def arms(nums):
     sum = 0
@@ -397,8 +440,18 @@ def arms(nums):
         print('armstrong')
     else:
         print('Not armstrong')
-
 arms(input('Enter number: '))
+
+# armstrong (another way)
+def Armstrong(num):
+    sum = 0
+    for i in str(num):
+        sum += int(i)**3
+    if sum == num:
+        print('armstrong')
+    else:
+        print('not armstrong')
+Armstrong(input('Enter number: '))
 
 # creditcard check
 def creditcard(x):
@@ -409,16 +462,118 @@ def creditcard(x):
         print('Please check number once')
 creditcard(input('Enter number to check validity:- '))
 
-# Binary conversion
-def dec_to_bin(x):
-    if x == 0:
-        return '0'
-    binary = ''
-    while x > 0:
-        binary = str(x%2) + binary
-        x //= 2
-    return binary
+# o/p -> a m     {'m', 'a'} d
+x = 'madam'
+r=''
+nr=''
+for i in x:
+    if x.count(i) > 1:
+        r += i 
+    else:
+        nr += i
+print(*set(r))
+print(set(r),nr)
 
-print(dec_to_bin(int(input('Enter number:-'))))
+# o/p -> ma
+x = 'madam'
+r=''
+for i in x:
+    if x.count(i) > 1 and i not in r:
+        r += i 
+print(r)
 
+# o/p -> {'m':2,'d':1,'a':2}
+x = 'madam'
+freq={}
+for i in x:
+    if i in freq:
+        freq[i] += 1
+    else:
+        freq[i] = 1
+print(freq)
 
+#o/p-> 	{1:'a',2:'b',3:'c'}
+data={'a':1,'b':2,'c':3}	
+freq = {}
+for k,v in data.items():
+    freq[v] = k
+print(freq)
+
+# o/p-> 'aaaabbbbbcccdddd'
+x ='a4b5c3d4'
+z=''
+for i in range(0,len(x),2):
+    z += x[i]*int(x[i+1])
+print(z)
+
+# Print - **** *** - 2 times 
+for i in range(4):
+    if i%2 == 0:
+        print("****")
+    else:
+        print("***")
+
+# Print **** *** ** *
+for i in range(4,0,-1):
+    print('*'*i)
+
+#['AI', 'TA', 'TS']
+x = ['Artificial Intelligence','Test Automation','Tractor Supply']
+y=[]
+for i in x:
+    z=''
+    for j in i.split():
+        z += j[0]
+    y.append(z)
+print(y)        
+
+#['AI', 'TA', 'TS'] (Another way)
+x = ['Artificial Intelligence','Test Automation','Tractor Supply']
+y=[]
+for i in x:
+    z=''
+    for j in i:
+        if j.isupper():
+            z += j
+    y.append(z)
+print(y)        #['AI', 'TA', 'TS']
+
+# o/p  ['yahoo.com','apple.com']
+emails=['test3@yahoo.com','test2@apple.com']
+domain = []
+for i in emails:
+    domain.append(i.split('@')[1])
+print(domain)
+
+#Longest string
+x = 'The quick brownY fox jumps over the lazy dog'
+freq = {}
+n =[]
+for i in x.split():
+    n.append(len(i))
+    freq[i] = len(i)
+y = sorted(n)[-1]
+for j in freq:
+    if len(j) == y:
+        print(j)
+
+#Longest string (Another way)
+x = 'The quick brownY fox jumps over the lazy dog'
+y = max(x.split(),key =len)
+print(y, len(y))
+
+#Longest string (Another way)
+x = 'The quick brownY fox jumps over the lazy dog'
+longest_word = ''
+for i in x.split():
+    if len(i) > len(longest_word):
+        longest_word = i 
+print(longest_word)
+
+# without using sort
+x = [2,3,3,5,3,1]
+for i in range(len(x)):
+    for j in range(i+1,len(x)):
+        if x[i] > x[j]:
+            x[i],x[j] = x[j],x[i]
+print(x)

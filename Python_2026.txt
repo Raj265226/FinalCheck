@@ -418,3 +418,7 @@ Add method for Operator Overloading - __add__(self,other) is used to define the 
     p1 = Product('Iphone',80000)
     p2 = Product('Android',20000)
     print('total cost -',p1+p2)                      --      total cost - 100000
+ 
+-------Web Based Framework---------
+MVC Architecture - Most of the web based frameworks come with an architectural pattern called MVC (Model View Controller)
+        That is used to separate web application logic into 3 main components. 

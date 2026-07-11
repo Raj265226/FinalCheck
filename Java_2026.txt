@@ -1,0 +1,4 @@
+Java - It's a object oriented High level language. 
+    Java compiler compiles the Java code to its respective Bytecode format and stores data in .class file
+JVM (Java Virtual Machine) - It's an interpreter and it interprets bytecode/code line by line to Machine language
+            Java Source Code (.java) -> Compiler (javac) ->  Bytecode (.class) -> JVM -> OS
